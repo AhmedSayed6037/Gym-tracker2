@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   History
+{% endblock %}
+
+{% block body %}
+         <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/history">History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/calories">Calories</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/challenges">Challenges</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="window.location.href=window.location.pathname; return false;">Refresh</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Settings
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/username">Change Username</a></li>
+            <li><a class="dropdown-item" href="/password">Change Password</a></li>
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<form action="/history">
+  <h1>History of challenges</h1>
+   <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">challenge</th>
+      <th scope="col">status</th>
+      <th scope="col">time</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for his in history %}
+    <tr>
+      <td scope="row">{{ his["challenge"] }}</td>
+      {% if his["status"] == "Done" %}
+      <td class="text-success">{{ his["status"] }}</td>
+      {% else %}
+      <td class="text-danger">{{ his["status"] }}</td>
+      {% endif %}
+      <td>{{ his["time"] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<hr>
+<h1>History of workouts</h1>
+   <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Day</th>
+      <th scope="col">Exercise_number</th>
+      <th scope="col">Exercise</th>
+      <th scope="col">muscle</th>
+      <th scope="col">Sets</th>
+      <th scope="col">Reps</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Tutorial</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for work in workouts %}
+    <tr>
+     <td>{{ work["day"] }}</td>
+     <td>{{ work["exercise_number"] }}</td>
+     <td>{{ work["exercise"] }}</td>
+     <td>{{ work["muscle"] }}</td>
+     <td>{{ work["reps"] }}</td>
+     <td>{{ work["sets"] }}</td>
+     <td>{{ work["weight"] }}</td>
+     <td><a href="https://musclewiki.com/" >Tutorial</a></td>
+     </tr>
+    {% endfor %}
+    </tbody>
+</form>
+{% endblock %}

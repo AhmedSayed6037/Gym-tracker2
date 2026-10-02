@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Username
+{% endblock %}
+
+{% block body %}
+         <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/history">History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/calories">Calories</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/challenges">Challenges</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="window.location.href=window.location.pathname; return false;">Refresh</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Settings
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/username">Change Username</a></li>
+            <li><a class="dropdown-item" href="/password">Change Password</a></li>
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="d-flex flex-column justify-content-center align-items-center vh-100">
+<h3><b>Change Username</b></h3>
+<form action="/username" method="Post" class="text-center">
+<input type="text" name="username">
+<button type="Submit" class="btn btn-primary">Change Username</button>
+</form>
+</div>
+{% endblock %}

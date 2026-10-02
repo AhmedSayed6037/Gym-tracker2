@@ -1,0 +1,156 @@
+/* ---------- WHOLE WEBSITE ---------- */
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    background-color: #0b1120;
+    color: #f8f9fa;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+    background: #0d6efd !important;
+
+    padding: 14px 30px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+
+    margin: 0 5px;
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.navbar .nav-link:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ---------- HEADINGS ---------- */
+
+h1, h2, h3 {
+    color: white;
+    font-weight: 700;
+}
+
+
+/* ---------- TABLES ---------- */
+
+.table {
+    --bs-table-bg: #151e2e;
+    --bs-table-color: #f8f9fa;
+    --bs-table-border-color: #2b3547;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.table thead th {
+    background-color: #0d6efd !important;
+    color: white !important;
+
+    border-color: #3284ff;
+    padding: 14px;
+}
+
+.table td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+
+/* ---------- INPUTS ---------- */
+
+.form-control,
+.form-select {
+    background-color: #151e2e;
+    color: white;
+
+    border: 1px solid #344054;
+    border-radius: 8px;
+}
+
+.form-control::placeholder {
+    color: #8d99aa;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #192436;
+    color: white;
+
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ---------- CARDS ---------- */
+
+.card {
+    background-color: #151e2e;
+    color: white;
+
+    border: 1px solid #293448;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ---------- GENERAL SPACING ---------- */
+
+body > h1,
+body > h2,
+body > h3,
+body > p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.navbar {
+    width: 100%;
+    background: #0d6efd !important;
+    padding: 14px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+.auth-form {
+    width: 90%;
+    max-width: 550px;
+
+    margin: 100px auto 0;
+
+    padding: 30px;
+}
