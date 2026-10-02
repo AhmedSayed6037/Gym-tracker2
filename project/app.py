@@ -182,7 +182,12 @@ def register():
        if password != confirm:
             return render_template("register.html",message = "Passwords do not match")
        if not name:
-            db.execute("INSERT INTO users (username,hash,gender) VALUES (?,?,?)",username,generate_password_hash(password),gender)
+            db.execute(
+                      "INSERT INTO users (username,hash,gender) VALUES (?,?,?) RETURNING id",
+                       username,
+                       generate_password_hash(password),
+                       gender
+                             )
        else:
               return render_template("register.html",message="Username already exists!")
        return redirect("/login")
