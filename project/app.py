@@ -2,10 +2,16 @@ from cs50 import SQL
 from flask import Flask,redirect, render_template, request, session , flash
 from flask_session import Session
 from werkzeug.security import generate_password_hash,check_password_hash
+import os
 
 app = Flask(__name__)
 
-db = SQL("sqlite:///gym.db")
+if os.environ.get("DATABASE_URL"):
+    db = SQL(os.environ["DATABASE_URL"])
+else:
+    db = SQL("sqlite:///gym.db")
+
+
 
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
